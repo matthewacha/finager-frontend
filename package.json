@@ -4,11 +4,16 @@
   "private": true,
   "dependencies": {
     "@babel/core": "^7.1.5",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
     "@babel/preset-env": "^7.1.5",
     "@babel/preset-react": "^7.0.0",
     "axios": "^0.18.0",
     "babel-loader": "^8.0.4",
+    "babel-plugin-emotion": "^10.0.6",
     "cookies-js": "^1.2.3",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
     "node-sass": "^4.10.0",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
@@ -16,13 +21,15 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
+    "redux-mock-store": "^1.5.3",
     "redux-saga": "^0.16.2",
+    "socket.io-client": "^2.2.0",
     "webpack": "4.19.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build webpack --mode production",
-    "test": "react-scripts test",
+    "test": "jest --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -33,5 +40,24 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}",
+      "!src/index.js",
+      "!src/registerServiceWorker.js",
+      "!<rootDir>/src/redux/actionCreator/index.js"
+    ],
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/redux/actionCreator/index.js",
+      "<rootDir>/src/mockData/*"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/__tests__/setupTests.js"
+  }
 }

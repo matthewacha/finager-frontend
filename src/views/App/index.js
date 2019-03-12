@@ -1,23 +1,19 @@
-import React, { Component, Fragments } from 'react';
+import React, { Component, Fragment } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Routes from '../../routes';
 import store from '../../redux/store';
-import logo from '../../logo.svg';
-import './App.scss';
 
 class App extends Component {
-  render() {
+    render() {
     return (
-        <Fragments>
-        <div className="App-container">
+        <Fragment>
           <Provider store={store}>
             <BrowserRouter>
               <Routes />
             </BrowserRouter>
           </Provider>
-        </div>
-      </Fragments>
+        </Fragment>
     );
   }
 }

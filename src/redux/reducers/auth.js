@@ -1,5 +1,5 @@
 import { USER_LOGIN,
-    USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE} from '../actionTypes';
+    USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE, GOOGLE_AUTH, GOOGLE_AUTH_FAILURE} from '../actionTypes';
 
 
 const initialState = {
@@ -9,6 +9,17 @@ const initialState = {
 
 export const authenticate = (state = initialState, action) => {
     switch(action.type){
+    case GOOGLE_AUTH:
+        return {
+            ...state,
+            isLoadingGoogle: true
+        };
+    case GOOGLE_AUTH_FAILURE:
+        return {
+            ...state,
+            isLoadingGoogle: false,
+            error: action.error
+        };
     case USER_LOGIN:
         return {
             ...state,
@@ -17,7 +28,7 @@ export const authenticate = (state = initialState, action) => {
     case USER_LOGIN_SUCCESS:
         return {
             ...state,
-            userDetails: action.payload,
+            userDetails: action.data,
             isLoading: false
         };
     case USER_LOGIN_FAILURE:

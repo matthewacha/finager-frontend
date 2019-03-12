@@ -1,14 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import ConnectedLogin from '../views/Login';
+import ConnectedAuth from '../views/Authenticate';
 
 
 const Routes = () => (
   <Switch>
     <Route
       path="/"
-      exact
-      component={ConnectedLogin}
+      component={ConnectedAuth}
     />
   </Switch>
 );

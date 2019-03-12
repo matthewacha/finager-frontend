@@ -1,3 +1,15 @@
-import { loginUser } from './Authenticate';
+import {
+  loginUser,
+  googleAuth,
+  googleAuthFailure,
+  loginUserSuccess,
+  loginUserFailure
+} from "./Authenticate";
 
-export { loginUser };
+export {
+  loginUser,
+  googleAuth,
+  googleAuthFailure,
+  loginUserSuccess,
+  loginUserFailure
+};

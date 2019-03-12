@@ -1,0 +1,239 @@
+
+// .auth__panel--social:hover {
+//     cursor: pointer;
+//     // background-color: #c8c8c840;
+//     box-shadow: rgba(0, 0, 0, 0.2) 0px 1rem 1rem -1rem;
+//     transition: background-color 0.5s, box-shadow 0.2s ease-out;
+// }
+
+// .auth__panel--video:hover {
+//     cursor: pointer;
+//     background-color: #c8c8c840;
+//     transition: background-color 0.2s ease-out;
+// }
+
+// .auth__panel--try:hover {
+//     cursor: pointer;
+//     background-color: #c8c8c840;
+//     transition: background-color 0.2s ease-out;
+// }
+
+// .auth__panel--icon:hover {
+//     cursor: pointer;
+//     box-shadow: rgba(0, 0, 0, 0.2) 0px 1rem 1rem -1rem;
+//     transition: box-shadow 0.2s linear 0s;
+// }
+
+// .auth__panel--terms:hover {
+//     cursor: pointer;
+//     color: #016682;
+//     text-decoration: underline solid #016682;
+// }
+
+.login-background{
+    height: 840px;
+    width: 100%;
+    display: inline-flex;
+    @media screen and (min-width: 760px) and (max-width: 1024px) {
+        display: block;
+    }
+    .auth{
+        &__left-column{
+            width: 40%;
+            height: inherit;
+            @media screen and (max-width: 550px){
+                width: 100%;
+            }
+        }
+        &__right-column{
+            background-color: #016682eb;
+            width: 60%;
+            height: inherit;
+            overflow-x: scroll;
+            @media screen and (max-width: 550px){
+                width: 0%;
+                height: inherit;
+                visibility: collapse;
+            }
+            &__panel{
+                margin: auto;
+                padding: 10%;
+                width: auto;
+                height: 39%;
+                background: #737f82;
+                &--text{
+                    position: relative;
+                    top: 4px;
+                    color: aliceblue;
+                    font-family: 'Tahoma';
+                    font-size: 20px;
+                    left: 15px;
+                    display: flex;
+                }
+            }
+        }
+        &__panel{
+            width: 100%;
+            height: inherit;
+            border-radius: 4px;
+            position: relative;
+            &--icon{
+                margin: auto;
+                margin-top: 10%;
+                width: 50%;
+                height: 220%;
+                border: 1px solid #97938f40;
+                border-radius: 4px;
+                position: relative;
+                z-index: 2;
+                background: white;
+                &__back{
+                    position: relative;
+                    z-index: 1;
+                    padding: 10%;
+                    padding-top:0px;
+                    width: auto;
+                    height: 15%;
+                    border: 1px solid #00000000;
+                    background: #016682;
+                }
+                .icon-image{
+                    width: -webkit-fill-available !important;
+                    height: -webkit-fill-available !important;
+                }
+            }
+            &--icon:hover {
+                cursor: pointer;
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 1rem 1rem -1rem;
+                transition: box-shadow 0.2s linear 0s;
+            }
+
+            &--text{
+                padding: 10%;
+                width: auto;
+                height: 15%;
+            }
+            &--intermediate{
+                padding: 10%;
+                width: auto;
+                height: 20%;
+                position: relative;
+                z-index: -2;
+            }
+            &--social{
+                display: inline-flex;
+                top:100px;
+                left: 100px;
+                margin: 2%;
+                margin-top: 5%;
+                margin-left: 21%;
+                padding: 10px;
+                width: 50%;
+                height: 8%;
+                border: 1px solid black;
+                border-radius: 30px;
+                border: 1px solid #97938f30;
+            }
+            
+            &--social:hover {
+                cursor: pointer;
+                // background-color: #c8c8c840;
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 1rem 1rem -1rem;
+                transition: background-color 0.5s, box-shadow 0.2s ease-out;
+            }
+            &--video{
+                display: inline-flex;
+                position: relative;
+                top: 80px;
+                left: 25px;
+                margin-left: 11%;
+                padding: 10px;
+                width: 26%;
+                height: 30px;
+                border-radius: 98px;
+                border: 2px solid #ffffff9c;
+            }
+            &--video:hover {
+                cursor: pointer;
+                background-color: #c8c8c840;
+                transition: background-color 0.2s ease-out;
+            }
+            
+            &--try{
+                display: inline-flex;
+                position: relative;
+                top: 80px;
+                left: 25px;
+                margin-left: 11%;
+                padding: 10px;
+                width: 26%;
+                height: 30px;
+                border-radius: 98px;
+                border: 2px solid #ffffff9c;
+            }
+
+            &--try:hover {
+                cursor: pointer;
+                background-color: #c8c8c840;
+                transition: background-color 0.2s ease-out;
+            }
+
+            &--terms{
+                margin-left: 21%;
+                font-size: 15px;
+            }
+            &--terms:hover {
+                cursor: pointer;
+                color: #016682;
+                text-decoration: underline solid #016682;
+            }
+
+            &--foot{
+                margin-top: 23.1%;
+                padding: 2%;
+                width: auto;
+                height: 3%;
+                border: 1px solid #016682;
+                background: #016682;
+            }
+        }
+    }
+
+}
+
+.google-icon{
+    width: fit-content;
+    @media screen and (max-width: 550px){
+        width: 34px;
+    }
+}
+
+.video-icon{
+    width: fit-content;
+    position: relative;
+    left: -2px;
+    @media screen and (max-width: 550px){
+        width: 34px;
+    }
+}
+
+.auth-text{
+    color: #737f82;
+    font-family: 'Tahoma';
+    font-size: 25px;
+    align-self: center;
+}
+
+.side-button__text{
+    color: #ffffff9c;
+    font-family: 'Tahoma';
+    font-size: 22px;
+    position: relative;
+    left: -17px;
+    align-self: center;
+    &--try{
+        position: relative;
+        left: 84px;
+        align-self: center;
+    }
+}
