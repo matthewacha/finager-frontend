@@ -1,4 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## FINAGER
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/f905c2e9e5353791a6e0/maintainability)](https://codeclimate.com/github/matthewacha/finager-frontend/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/f905c2e9e5353791a6e0/test_coverage)](https://codeclimate.com/github/matthewacha/finager-frontend/test_coverage)
+
 
 ## Available Scripts
 
