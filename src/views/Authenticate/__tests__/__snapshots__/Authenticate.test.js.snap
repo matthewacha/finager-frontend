@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Authenticate component Test it renders correctlt 1`] = `
+<Connect(Authentication)
+  props={
+    Object {
+      "loginUser": [MockFunction],
+    }
+  }
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+/>
+`;
