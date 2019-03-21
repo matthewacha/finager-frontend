@@ -27,6 +27,6 @@ Dashboard.defaultProps = {};
 
 const actionCreators = {};
 
-const mapStateToProps = ({}) => ({});
+const mapStateToProps = (state) => ({});
 
 export default connect(mapStateToProps, actionCreators)(Dashboard);

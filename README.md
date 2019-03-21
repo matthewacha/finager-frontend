@@ -2,6 +2,7 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/f905c2e9e5353791a6e0/maintainability)](https://codeclimate.com/github/matthewacha/finager-frontend/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f905c2e9e5353791a6e0/test_coverage)](https://codeclimate.com/github/matthewacha/finager-frontend/test_coverage)
+[![Build Status](https://travis-ci.org/matthewacha/finager-frontend.svg?branch=develop)](https://travis-ci.org/matthewacha/finager-frontend)
 
 
 ## Available Scripts

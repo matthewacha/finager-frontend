@@ -1,9 +1,9 @@
+/* istanbul ignore file */
 import { all } from 'redux-saga/effects';
-import { watchAuthUser, watchLoginUser } from './userAuthSagas';
+import { watchLoginUser } from './userAuthSagas';
 
 function* rootSaga() {
   yield all([
-    watchAuthUser(),
     watchLoginUser(),
   ]);
 }

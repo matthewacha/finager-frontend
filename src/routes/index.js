@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import ConnectedAuth from '../views/Authenticate';
+import ConnectedLogin from '../views/Login';
 import ConnectedDash from '../views/Dashboard';
 import SiteLayout from '../hoc/Layout';
-
+import Authenticate from '../hoc/protectedRoute';
 
 
 const Routes = () => (
@@ -11,7 +11,7 @@ const Routes = () => (
     <Route
     exact
     path="/"
-    component={ConnectedAuth}
+    component={ConnectedLogin}
     />
     <Route>
       <SiteLayout>
@@ -19,7 +19,7 @@ const Routes = () => (
           <Route
           exact
           path="/home"
-          component={ConnectedDash}
+          component={Authenticate(ConnectedDash)}
           />
         </Switch>
       </SiteLayout>

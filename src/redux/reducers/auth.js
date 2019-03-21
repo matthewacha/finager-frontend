@@ -1,45 +1,36 @@
-import { USER_LOGIN,
-    USER_LOGIN_SUCCESS, USER_LOGIN_FAILURE, GOOGLE_AUTH, GOOGLE_AUTH_FAILURE} from '../actionTypes';
-
+import {
+  USER_LOGIN,
+  USER_LOGIN_SUCCESS,
+  USER_LOGIN_FAILURE
+} from "../actionTypes";
 
 const initialState = {
-    userDetails: {},
-    isLoading: false
-}
+  userToken: undefined,
+  isLoading: false
+};
 
 export const authenticate = (state = initialState, action) => {
-    switch(action.type){
-    case GOOGLE_AUTH:
-        return {
-            ...state,
-            isLoadingGoogle: true
-        };
-    case GOOGLE_AUTH_FAILURE:
-        return {
-            ...state,
-            isLoadingGoogle: false,
-            error: action.error
-        };
+  switch (action.type) {
     case USER_LOGIN:
-        return {
-            ...state,
-            isLoading: true
-        };
+      return {
+        ...state,
+        isLoading: true
+      };
     case USER_LOGIN_SUCCESS:
-        return {
-            ...state,
-            userDetails: action.data,
-            isLoading: false
-        };
+      return {
+        ...state,
+        userToken: action.data,
+        isLoading: false
+      };
     case USER_LOGIN_FAILURE:
-        return {
-            ...state,
-            error: action.error,
-            isLoading: false
-        };
+      return {
+        ...state,
+        error: action.error,
+        isLoading: false
+      };
     default:
-    return state;
-    }
-}
+      return state;
+  }
+};
 
 export default authenticate;

@@ -41,7 +41,7 @@ class  Layout extends PureComponent {
         const buttonName = event.target.id;
         this.setState({activeDash: buttonName})
         localStorage.setItem('activeDash', buttonName);
-        window.location.replace(`http://localhost:3000/${buttonName}`)
+        window.location.replace(`${process.env.REACT_APP_FRONTEND_URL}/${buttonName}`)
     }
 
     renderSideButtons = (text, activeIcon, activeDash, inactiveIcon) => {
@@ -49,7 +49,6 @@ class  Layout extends PureComponent {
         const icon = status === 'active' ? activeIcon : inactiveIcon;
         return (
             <div role="button" onClick={this.changeComponent} className="side-bar__body--category">
-                <img className="icon-category" src={icon} alt="logo" />
                 <div id={`${text}`} className={`account-text__${status}`}>
                     {text}
                 </div>
