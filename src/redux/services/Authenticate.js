@@ -19,9 +19,17 @@ class AuthenticationApi {
         return success;
     }
 
-    static loginUser(data){
-        
-        return data;
+    static async loginUser(data){
+        const baseUrl = process.env.REACT_APP_BACKEND_URL
+        const options = {
+            body: data,
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        }
+        const response = await fetch(`${baseUrl}/authenticate`, options)
+        return response;
     }
 }
 

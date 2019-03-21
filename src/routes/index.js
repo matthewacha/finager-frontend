@@ -5,13 +5,14 @@ import ConnectedDash from '../views/Dashboard';
 import SiteLayout from '../hoc/Layout';
 
 
-// <Route
-// exact
-// path="/"
-// component={ConnectedAuth}
-// />
+
 const Routes = () => (
   <Switch>
+    <Route
+    exact
+    path="/"
+    component={ConnectedAuth}
+    />
     <Route>
       <SiteLayout>
         <Switch>
