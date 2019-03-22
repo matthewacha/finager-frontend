@@ -17,14 +17,15 @@ class Authentication extends Component {
     status: "signup"
   };
 
-  handleLoad = (errorCallback) => {
+  handleLoad = (successCallback, errorCallback) => {
     const params = {
-      apiKey: process.env.REACT_APP_GOOGLE_API_KEY,
-      discoveryDocs: [process.env.REACT_APP_GOOGLE_API_DISCOVERY_DOCS],
-      clientId: process.env.REACT_APP_GOOGLE_CLIENT_ID,
-      scope: "profile email",
-      redirect_uri: process.env.REACT_APP_REDIRECT_URI,
-      clientSecret: process.env.REACT_APP_GOOGLE_CLIENT_SECRET
+      apiKey: "AIzaSyDhTzY6EjccIISxr7A0j_RhLkGkdCiAig4",
+      discoveryDocs: [
+        "https://people.googleapis.com/$discovery/rest?version=v1"
+      ],
+      clientId:
+        "599280857870-jubqh41bgsolgejejsfvalhqinu092mt.apps.googleusercontent.com",
+      scope: "profile"
     };
     window.gapi.load("auth2", () => {
       // initialize
@@ -34,7 +35,8 @@ class Authentication extends Component {
           // window.gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
           if (res.isSignedIn.get()) {
             // handle success action creator here
-            this.handleSuccess(res.currentUser.get());
+            successCallback(res.currentUser.get());
+            console.log(res.currentUser.get());
           }
         },
         // handle error action creator err =>
@@ -55,18 +57,8 @@ class Authentication extends Component {
   };
 
   componentDidMount() {
-    const { googleAuthFailure } = this.props;
-    this.loadGoogleClient(this.handleLoad(googleAuthFailure));
-  }
-
-  handleSuccess = response => {
-    const { loginUser } = this.props;
-    const userProfile = response.getBasicProfile()
-    const authResponse = response.getAuthResponse()
-    response.googleId = userProfile.getId()
-    response.tokenId = authResponse.id_token
-    response.accessToken = authResponse.access_token
-    loginUser(response)
+    const { loginUser, googleAuthFailure } = this.props;
+    this.loadGoogleClient(this.handleLoad(loginUser, googleAuthFailure));
   }
 
   handleClick = event => {
@@ -76,7 +68,8 @@ class Authentication extends Component {
     auth.signIn().then(
       res => {
         // handle success action creator here
-        loginUser(res);
+        successCallback(res);
+        console.log(res);
       },
       err => {
         // handle error action creator here
