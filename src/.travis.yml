@@ -8,19 +8,17 @@ addons:
     code_climate:
         repo_token: $codeclimate_repo_token
 script:
-  - yarn install
   - yarn test
-  - CI=false yarn build
+  - yarn run build
 before_script:
   - yarn add codeclimate-test-reporter istanbul -g
 after_script:
   - codeclimate-test-reporter < ./coverage/lcov.info
 
 deploy:
-  provider: heroku
-  api_key:
-    secure: $heroku_api_key
+  provider: pages
   skip_cleanup: true
+  github_token: $github_token
   local_dir: build
   on:
-    all_branches: true
+    branch: $branch
